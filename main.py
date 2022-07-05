@@ -7,8 +7,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def greeting_message():
-    return '\nWelcome to Berkler server!' + '\n\n' + helper.get_datetime()
+    return '\nWelcome to TODO server!' + '\n\n' + helper.get_datetime()
 
+# --- CRUD ---
 
 # CREATE an item
 @app.route('/item/new', methods=['POST'])
@@ -73,7 +74,7 @@ def update_status():
     item = req_data['item']
     status = req_data['status']
 
-    # Update item in the list
+    # Update an item in the list
     res_data = helper.update_status(item, status)
 
     # Return error if the status could not be updated
